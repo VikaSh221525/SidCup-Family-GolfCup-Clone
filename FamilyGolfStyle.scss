@@ -1,0 +1,325 @@
+@import "Page3";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    font-family: "Montserrat";
+    color: white;
+    // perspective: 1000px;
+}
+.header{
+    padding: 1.5rem 8rem;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    z-index: 11;
+    
+
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+} 
+.header_content{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    .logo{
+        width: 74px;
+        width: 94px;
+    }
+}
+
+.nav_list{
+    display: flex;
+    gap: 3rem;
+
+}
+
+.nav_links{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #99c917;
+    position: fixed;
+    z-index: 99;
+}
+#cursor_blur{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: #99c917d0;
+    position: fixed;
+    filter: blur(150px);
+    z-index: 9;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.358);
+    #page1{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        z-index: 10;
+        h1{
+            font-size: 9.2rem;
+            font-weight: 900;
+            width: 70%;
+            line-height: 0.9;
+            position: relative;
+        }
+        h1::before{
+            content: "EAT. DRINK. PLAY.";
+            position: absolute;
+            color: black;
+            left: -9px;
+            top: -5px;
+            -webkit-text-stroke: 2px #99c917;
+            z-index: -1;
+        }
+        h2{
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 1.5rem;
+            margin-bottom: 0.9rem;
+        }
+        p{
+            width: 50%;
+            font-size: 1.3rem;
+            font-weight: 450;
+        }
+    }
+    #page2{
+        min-height: 100vh;
+        width: 100%;
+        z-index: 11;
+    }
+}
+
+
+.scroller{
+    // background: red;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    // for hovering effect to apply relative and zindex is used
+    position: relative;
+    z-index: 10;
+    h4{
+        display: inline-block;
+        font-size: 8rem;
+        font-weight: 700;
+        margin-right: 16px;
+        -webkit-text-stroke: 1.5px white;
+        color: #000;
+    }
+    h4:hover{
+        -webkit-text-stroke: 0;
+        color: #99c917;
+    }
+    .scroller-in{
+        display: inline-block;
+        white-space: nowrap;
+        animation-name: scroll;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    
+}
+.scroller::-webkit-scrollbar{
+    display: none;
+}
+
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.about_us{
+    // background-color: red;
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    position: relative;
+    z-index: 10;
+    .img1{
+        height: 140px;
+        width: 140px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .img2{
+        height: 200px;
+        width: 140px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    .about-us-content{
+        width: 57%;
+        text-align: center;
+        h1{
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+        }
+        #p1{
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.9rem;
+            margin-bottom: 2rem;
+        }
+        #p2{
+            font-size: 1.3rem;
+            font-weight: 500;
+            line-height: 1.9rem;
+        }
+    }
+}
+
+.container{
+    margin-top: 7rem;
+    // background-color: red;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 10;
+    perspective: 1000px;
+
+    .card{
+        height: 90%;
+        width: 25%;
+        // background-color: blue;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        
+        .color{
+            background-color: #00000023;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            
+            
+            h1{
+                position: absolute;
+                bottom: 1.9rem;
+                left: 2rem;
+                width: 80%;
+                font-size: 2.7rem;
+                font-weight: 800;
+                
+            }
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute; // Position it absolutely within the card
+            top: 0;
+            left: 0;
+            z-index: 3; // Ensure the overlay is above the color content and text
+            background-color: #99c917;
+            padding-top: 5rem;
+            padding-left: 1.5rem;
+            color: #000;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            h1{
+                margin-bottom: 1rem;
+                font-size: 2.6rem;
+                font-weight: 800;
+                width: 80%;
+            }
+            #p1{
+                font-size: 1.2rem;
+                font-weight: 450;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+            #p2{
+                font-size: 1.2rem;
+                font-weight: 450;
+                line-height: 1.5;
+            }
+        }
+        &:hover .overlay{
+            opacity: 1;
+        }
+        
+    }
+    .card:hover{
+        transform: rotate3d(-1,1,0,10deg);
+    }
+}
+#card1{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&amp;lossy=1&amp;sharp=1&amp;ssl=1");
+}
+#card2{
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&amp;lossy=1&amp;sharp=1&amp;ssl=1");
+}
+#card3{
+    background-image: url("https://images.unsplash.com/photo-1591491640784-3232eb748d4b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdvbGZ8ZW58MHx8MHx8fDA%3D");
+}
+
+
+.green-div{
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right top, #99c917, #88BD20, #37A932);
+    text-align: center;
+    margin-top: 3rem;
+    img{
+        height: 100%;
+        object-fit: cover;
+        width: 12%;
+    }
+    h1{
+        color: #000;
+        width: 60%;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 1.5;
+    }
+}
