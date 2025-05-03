@@ -92,12 +92,120 @@
 
 #footer{
     margin-top: 5rem;
-    height: 60vh;
+    height: 55vh;
     width: 100%;
     background: linear-gradient(to right top, #99c917, #88BD20, #37A932);
+    position: relative;
     img{
         height: 99%;
         object-fit: cover;
         width: 27%;
+        z-index: 9;
+    }
+    .icon{
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        position: absolute;
+        top: 100px;
+        left: 150px;
+        
+        a{
+            text-decoration: none;
+            #MainLogo{
+                // height: 100px;
+                width: 120px;
+                // position: absolute;
+                // top: 0;
+                // left: 0;
+            }
+        }
+        .social_icons{
+            display: flex;
+            gap: 0.8rem;
+            // position: absolute;
+            // top: 0;
+            // right: 0;
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                i {
+                    font-size: 2rem; // Increase the size of the icons
+                    color: black;
+                    transition: transform 0.3s ease; // Add a hover effect
+                }
+                i:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    .Titles{
+        position: absolute;
+        top: 100px;
+        left: 400px;
+        display: flex;
+        gap: 4rem;
+        color: black;
+        
+        .Title1{
+            h1{
+                line-height: 3rem;
+                font-weight: 900;
+                font-size: 2rem;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+        .Title2{
+            h1{
+                line-height: 3rem;
+                font-weight: 900;
+                font-size: 2rem;
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .location{
+        position: absolute;
+        top: 90px;
+        right: 130px;
+        .address{
+            color: black;
+            p{
+                font-size: 1.2rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            h1{
+                margin-top: 10px;
+                font-size: 1.3rem;
+                font-weight: 800;
+            }
+        }
+    }
+    .legal_links{
+        position: absolute;
+        bottom: 30px;
+        left: 140px;
+        display: flex;
+        gap: 17rem;
+        .copyright{
+            p{
+                color: black;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+        }
+        .designer{
+            p{
+                color: black;
+                font-weight: 500;
+            }
+        }
+
     }
 }

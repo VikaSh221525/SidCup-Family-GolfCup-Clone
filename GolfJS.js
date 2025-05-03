@@ -153,3 +153,18 @@ links.forEach(function(elem){
     })
     
 })
+
+var arrow = document.querySelectorAll(".arrow")
+arrow.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        cursr.style.scale = 3;
+        cursr.style.backgroundColor = "transparent"
+        cursr.style.border = "1px solid white"
+    })
+    elem.addEventListener("mouseleave", function(){
+        cursr.style.scale = 1;
+        cursr.style.backgroundColor = "#99c917"
+        cursr.style.border = "none"
+    })
+    
+})
