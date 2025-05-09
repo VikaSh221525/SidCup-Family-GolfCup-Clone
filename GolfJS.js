@@ -13,7 +13,9 @@ gsap.to(".header",{
         // markers: true,
         start: "top -10%",
         end: "top -11%",
-        scrub: 1
+        scrub: 1,
+        onEnter: () => document.querySelector(".header").classList.add("dark-header"),
+        onLeaveBack: () => document.querySelector(".header").classList.remove("dark-header"),
     }
 });
 
@@ -48,7 +50,7 @@ document.addEventListener("mousemove", function(e){
     gsap.to("#cursor", {
         left: e.clientX - 10,
         top: e.clientY - 10,
-        scale: isHovering ? 2 : 1,
+        scale: isHovering ? 3 : 1,
         backgroundColor: isHovering ? "transparent" : "#99c917",
         border: isHovering ? "1px solid white" : "none",
         duration: 0.08, // Faster, smoother response
@@ -152,7 +154,7 @@ links.forEach(function(elem){
     
 })
 
-var arrow = document.querySelectorAll(".arrow")
+let arrow = document.querySelectorAll(".arrow")
 arrow.forEach(function(elem){
     elem.addEventListener("mouseenter", function(){
         isHovering = true;
@@ -161,4 +163,14 @@ arrow.forEach(function(elem){
         isHovering = false;
     })
     
+})
+
+let Logo = document.querySelectorAll("#logo");
+Logo.forEach(function(elem){
+    elem.addEventListener("mouseenter", function(){
+        isHovering = true;
+    })
+    elem.addEventListener("mouseleave", function(){
+        isHovering = false;
+    })
 })

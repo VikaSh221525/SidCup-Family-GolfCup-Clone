@@ -232,6 +232,10 @@ a {
   width: 74px;
   width: 94px;
 }
+.header_content .logo:hover {
+  transform: translateX(3px) scale(0.95);
+  transition: transform 0.3s ease;
+}
 
 .nav_list {
   display: flex;
@@ -241,6 +245,14 @@ a {
 .nav_links {
   font-size: 1rem;
   font-weight: 500;
+}
+
+.nav_links:hover {
+  color: #000;
+}
+
+.header.dark-header .nav_links:hover {
+  color: #99c917;
 }
 
 video {
