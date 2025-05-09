@@ -42,19 +42,23 @@ gsap.to("#main",{
 
 let cursr =  document.getElementById("cursor");
 let curBlur = document.getElementById("cursor_blur");
+let isHovering = false;
 
-document.addEventListener("mousemove", function(dets){
+document.addEventListener("mousemove", function(e){
     gsap.to("#cursor", {
-        left: dets.x+27,
-        top: dets.y-12,
-        duration: 0.3, // smoothness
+        left: e.clientX - 10,
+        top: e.clientY - 10,
+        scale: isHovering ? 2 : 1,
+        backgroundColor: isHovering ? "transparent" : "#99c917",
+        border: isHovering ? "1px solid white" : "none",
+        duration: 0.08, // Faster, smoother response
         ease: "power2.out" 
     });
 
     gsap.to("#cursor_blur", {
-        left: dets.x - 200,
-        top: dets.y - 200,
-        duration: 0.6,
+        left: e.clientX - 100,
+        top: e.clientY - 100,
+        duration: 0.3,
         ease: "power2.out"
     });
 })
@@ -62,14 +66,12 @@ document.addEventListener("mousemove", function(dets){
 var links = document.querySelectorAll(".nav_links")
 links.forEach(function(elem){
     elem.addEventListener("mouseenter", function(){
-        cursr.style.scale = 2;
-        cursr.style.backgroundColor = "transparent"
-        cursr.style.border = "1px solid white"
+        isHovering = true;
+        
     })
     elem.addEventListener("mouseleave", function(){
-        cursr.style.scale = 1;
-        cursr.style.backgroundColor = "#99c917"
-        cursr.style.border = "none"
+        isHovering = false;
+
     })
     
 })
@@ -142,14 +144,10 @@ gsap.from("#BackHeading",{
 var links = document.querySelectorAll(".elem")
 links.forEach(function(elem){
     elem.addEventListener("mouseenter", function(){
-        cursr.style.scale = 3;
-        cursr.style.backgroundColor = "transparent"
-        cursr.style.border = "1px solid white"
+        isHovering = true;
     })
     elem.addEventListener("mouseleave", function(){
-        cursr.style.scale = 1;
-        cursr.style.backgroundColor = "#99c917"
-        cursr.style.border = "none"
+        isHovering = false;
     })
     
 })
@@ -157,14 +155,10 @@ links.forEach(function(elem){
 var arrow = document.querySelectorAll(".arrow")
 arrow.forEach(function(elem){
     elem.addEventListener("mouseenter", function(){
-        cursr.style.scale = 3;
-        cursr.style.backgroundColor = "transparent"
-        cursr.style.border = "1px solid white"
+        isHovering = true;
     })
     elem.addEventListener("mouseleave", function(){
-        cursr.style.scale = 1;
-        cursr.style.backgroundColor = "#99c917"
-        cursr.style.border = "none"
+        isHovering = false;
     })
     
 })

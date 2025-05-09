@@ -64,6 +64,7 @@ video{
     background-color: #99c917;
     position: fixed;
     z-index: 99;
+    transition: all ease 0.2s;
 }
 #cursor_blur{
     height: 250px;
@@ -194,6 +195,13 @@ video{
         transform: translateX(-100%);
     }
 }
+#cursor {
+    pointer-events: none;
+}
+#cursor_blur {
+    pointer-events: none;
+}
+
 
 .about_us{
     // background-color: red;
